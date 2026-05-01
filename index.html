@@ -119,7 +119,7 @@ body {
 /* ── WIZARD WRAP ── */
 .wizard-wrap{ max-width:1000px; margin: -10px auto 50px; padding: 0 18px; z-index:2; position:relative; }
 
-/* ── QUICK START SECTION ── */
+/* ── QUICK START ── */
 .quick-start {
   background: rgba(24,34,51,0.7);
   backdrop-filter: blur(10px);
@@ -131,32 +131,42 @@ body {
 }
 .quick-start h2 {
   font-family: 'Press Start 2P', monospace;
-  font-size: 10px;
+  font-size: clamp(8px, 1.5vw, 10px);
   color: var(--accent);
   letter-spacing: 1px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
-.quick-buttons {
+/* Triangular layout */
+.quick-buttons-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.quick-btn-top {
+  margin: 0 auto;
+}
+.quick-buttons-row {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  margin-bottom: 14px;
 }
 .quick-btn {
   background: var(--card);
   border: 2px solid var(--easy);
   border-radius: 14px;
-  padding: 18px 24px;
+  padding: clamp(12px, 2vw, 18px) clamp(16px, 3vw, 24px);
   cursor: pointer;
   color: #fff;
   font-weight: 900;
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   transition: 0.2s;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  text-decoration: none;
 }
 .quick-btn:hover {
   transform: translateY(-4px);
@@ -164,30 +174,76 @@ body {
   box-shadow: 0 8px 24px rgba(46,125,50,0.4);
 }
 .quick-note {
-  font-size: 13px;
+  font-size: clamp(12px, 1.8vw, 13px);
   color: rgba(255,255,255,0.7);
+  margin-top: 14px;
+  margin-bottom: 8px;
 }
 
-/* ── FULL GUIDE TOGGLE ── */
+/* ── FULL GUIDE TOGGLE inside quick-start ── */
 .toggle-full-guide {
+  margin-top: 8px;
   text-align: center;
-  margin-bottom: 20px;
 }
 .toggle-btn {
   display: inline-block;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.8);
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border: none;
+  color: #000;
+  font-weight: 900;
+  font-size: clamp(14px, 2.2vw, 15px);
   padding: 10px 24px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 14px;
+  border-radius: 12px;
   cursor: pointer;
   transition: 0.2s;
+  box-shadow: 0 0 20px rgba(255,215,0,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 .toggle-btn:hover {
-  background: rgba(255,255,255,0.12);
-  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 32px rgba(255,215,0,0.9);
+}
+
+/* ── BRAVE TIP (separate) ── */
+.brave-tip {
+  display: flex; align-items: center; gap: 12px;
+  background: linear-gradient(135deg, rgba(255,87,34,0.1), rgba(255,152,0,0.08));
+  border-left: 4px solid #FF5722;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin: 0 auto 20px;
+  max-width: 800px;
+  text-align: left;
+  color: #FFCC80;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(255,87,34,0.2);
+  backdrop-filter: blur(6px);
+}
+.brave-tip-icon { font-size: 28px; flex-shrink: 0; }
+
+/* ── Mobile adjustments ── */
+@media (max-width: 600px) {
+  .quick-buttons-row {
+    gap: 12px;
+  }
+  .quick-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+    gap: 6px;
+  }
+  .toggle-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .brave-tip {
+    font-size: 13px;
+    padding: 12px 16px;
+  }
+  .brave-tip-icon {
+    font-size: 24px;
+  }
 }
 
 /* ── CHOICE SCREEN (full grid) ── */
@@ -242,24 +298,6 @@ body {
 .host-card.green-card .host-difficulty { color:#81C784; }
 .host-card.yellow-card .host-difficulty { color:#FFD54F; }
 .host-card.red-card .host-difficulty { color:#EF9A9A; }
-
-/* ── BRAVE TIP ── */
-.brave-tip {
-  display: flex; align-items: center; gap: 12px;
-  background: linear-gradient(135deg, rgba(255,87,34,0.1), rgba(255,152,0,0.08));
-  border-left: 4px solid #FF5722;
-  border-radius: 10px;
-  padding: 14px 20px;
-  margin: 0 auto 20px;
-  max-width: 800px;
-  text-align: left;
-  color: #FFCC80;
-  font-size: 14px;
-  font-weight: 700;
-  box-shadow: 0 0 20px rgba(255,87,34,0.2);
-  backdrop-filter: blur(6px);
-}
-.brave-tip-icon { font-size: 28px; flex-shrink: 0; }
 
 .step-container {
   background:rgba(24,34,51,0.8); backdrop-filter:blur(12px);
@@ -437,24 +475,29 @@ body {
 
 <div class="wizard-wrap">
 
-  <!-- QUICK START SECTION -->
+  <!-- QUICK START SECTION (Triangular layout, Press for More inside) -->
   <div class="quick-start" id="quickStart">
-    <h2>⚡ Already know how? Pick a recommended host</h2>
-    <div class="quick-buttons">
-      <button class="quick-btn" onclick="startWizard('mediafire')">📁 MediaFire</button>
-      <button class="quick-btn" onclick="startWizard('sendnow')">⚡ Send.now</button>
+    <h2>⚡ Recommended Easy Hosts</h2>
+    <div class="quick-buttons-col">
+      <div class="quick-btn-top">
+        <button class="quick-btn" onclick="startWizard('mediafire')">📁 MediaFire</button>
+      </div>
+      <div class="quick-buttons-row">
+        <button class="quick-btn" onclick="startWizard('gofile')">📂 Gofile.io</button>
+        <button class="quick-btn" onclick="startWizard('sendnow')">⚡ Send.now</button>
+      </div>
     </div>
-    <p class="quick-note">These are the fastest and safest options. Just click to see the quick steps.</p>
-    <!-- Brave tip inside quick start -->
-    <div class="brave-tip" style="margin-top:20px;">
-      <span class="brave-tip-icon">🦁</span>
-      <span><strong>Brave Browser Recommended!</strong> Brave blocks most ads automatically. Always stay cautious — some malicious pages may still appear.</span>
+    <p class="quick-note">Google Drive and Dropbox are also great easy options.</p>
+    <!-- Toggle inside quick-start -->
+    <div class="toggle-full-guide" id="toggleArea">
+      <button class="toggle-btn" onclick="toggleFullGuide()">🔽 Press for More Options</button>
     </div>
   </div>
 
-  <!-- FULL GUIDE TOGGLE -->
-  <div class="toggle-full-guide" id="toggleArea">
-    <button class="toggle-btn" onclick="toggleFullGuide()">📘 Show Full Host Guide (beginner friendly)</button>
+  <!-- BRAVE TIP (separate) -->
+  <div class="brave-tip">
+    <span class="brave-tip-icon">🦁</span>
+    <span><strong>Brave Browser Recommended!</strong> Brave blocks most ads automatically. Always stay cautious – some malicious pages may still appear.</span>
   </div>
 
   <!-- FULL GUIDE (initially hidden) -->
@@ -532,8 +575,16 @@ body {
   draw();
 })();
 
-/* ─── HOSTS DATA (accurate, redefined) ─── */
+/* ─── HOSTS DATA (Gofile first in full list) ─── */
 const hosts = [
+  { id:'gofile', name:'Gofile.io', logo:'gofile-logo.png', color:'green',
+    steps:[
+      { title:'📂 Find Your File', body:'You will see a list of files. Locate the one you want.' },
+      { title:'⬇️ Click the Download Icon', body:'On the <strong>right side</strong> of the file row, there is a download icon next to three dots. Click it.' },
+      { title:'⏳ Wait a Moment', body:'The download may take a moment to start. It will then begin.' },
+      { title:'📂 Locate the File', body:'Find the downloaded file in your Downloads.' }
+    ]
+  },
   { id:'mediafire', name:'MediaFire.com', logo:'mediafire-logo.png', color:'green',
     steps:[
       { title:'📁 Spot the Blue Download Button', body:'Look for the <strong>large blue button</strong> in the center. It shows the file name and size.' },
@@ -560,14 +611,6 @@ const hosts = [
       { title:'📦 Open Dropbox Link', body:'You will see a file preview. Click the <strong>"Download"</strong> button (usually top right).' },
       { title:'⬇️ Automatic Download', body:'The browser downloads the file automatically. No login required for public links.' },
       { title:'📂 Locate the File', body:'Check your Downloads folder.' }
-    ]
-  },
-  { id:'gofile', name:'Gofile.io', logo:'gofile-logo.png', color:'yellow',
-    steps:[
-      { title:'📂 Find Your File', body:'You will see a list of files. Locate the one you want.' },
-      { title:'⬇️ Click the Download Icon', body:'On the <strong>right side</strong> of the file row, there is a download icon next to three dots. Click it.' },
-      { title:'⏳ Wait a Moment', body:'The download may take a moment to start. It will then begin.' },
-      { title:'📂 Locate the File', body:'Find the downloaded file in your Downloads.' }
     ]
   },
   { id:'krakenfiles', name:'Krakenfiles.com', logo:'krakenfiles-logo.png', color:'yellow',
@@ -673,12 +716,6 @@ hosts.forEach(host => {
 function toggleFullGuide() {
   const guide = document.getElementById('choiceScreen');
   guide.classList.toggle('hidden');
-  const btn = document.querySelector('.toggle-btn');
-  if (guide.classList.contains('hidden')) {
-    btn.textContent = '📘 Show Full Host Guide (beginner friendly)';
-  } else {
-    btn.textContent = '📘 Hide Full Host Guide';
-  }
 }
 
 /* ─── WIZARD LOGIC ─── */
@@ -697,9 +734,7 @@ function getHostById(id) { return hosts.find(h => h.id === id); }
 function startWizard(hostId) {
   currentHostId = hostId;
   currentStep = 0;
-  // Hide quick start and toggle, show wizard
   document.getElementById('quickStart').style.display = 'none';
-  document.getElementById('toggleArea').style.display = 'none';
   document.getElementById('choiceScreen').classList.add('hidden');
   wizardArea.style.display = 'block';
   renderSteps();
@@ -709,8 +744,6 @@ function startWizard(hostId) {
 function goBack() {
   wizardArea.style.display = 'none';
   document.getElementById('quickStart').style.display = '';
-  document.getElementById('toggleArea').style.display = '';
-  // Keep full guide hidden when going back to start
   document.getElementById('choiceScreen').classList.add('hidden');
   currentHostId = null;
 }
