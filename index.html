@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mirrored.to — Full Host Download Guide | MIA</title>
+<title>Mirrored.to — Dual‑Layer Host Guide | MIA</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -116,33 +116,88 @@ body {
 }
 .hero-sub{ font-size:14px; color:var(--sand); font-weight:700; margin-top:6px; position:relative; z-index:1; }
 
-/* ── WIZARD ── */
+/* ── WIZARD WRAP ── */
 .wizard-wrap{ max-width:1000px; margin: -10px auto 50px; padding: 0 18px; z-index:2; position:relative; }
-.choice-screen{ text-align:center; margin:44px 0 20px; transition: all 0.4s ease; }
-.choice-screen.hidden{ opacity:0; transform:scale(0.95); pointer-events:none; height:0; overflow:hidden; margin:0; }
+
+/* ── QUICK START SECTION ── */
+.quick-start {
+  background: rgba(24,34,51,0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  border:1px solid rgba(93,158,49,0.2);
+}
+.quick-start h2 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+.quick-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.quick-btn {
+  background: var(--card);
+  border: 2px solid var(--easy);
+  border-radius: 14px;
+  padding: 18px 24px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 900;
+  font-size: 16px;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+.quick-btn:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(46,125,50,0.4);
+}
+.quick-note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* ── FULL GUIDE TOGGLE ── */
+.toggle-full-guide {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.toggle-btn {
+  display: inline-block;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.8);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.toggle-btn:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+/* ── CHOICE SCREEN (full grid) ── */
+.choice-screen{ text-align:center; margin:0 0 20px; transition: all 0.4s ease; }
+.choice-screen.hidden{ display:none; }
 .choice-title{
   font-family:'Press Start 2P',monospace;font-size:10px;
   color:var(--accent);margin-bottom:32px;letter-spacing:2px;
   text-shadow:0 0 20px rgba(255,215,0,0.4);
 }
-
-/* ── BRAVE TIP ── */
-.brave-tip {
-  display: flex; align-items: center; gap: 12px;
-  background: linear-gradient(135deg, rgba(255,87,34,0.1), rgba(255,152,0,0.08));
-  border-left: 4px solid #FF5722;
-  border-radius: 10px;
-  padding: 14px 20px;
-  margin: 0 auto 24px;
-  max-width: 800px;
-  text-align: left;
-  color: #FFCC80;
-  font-size: 14px;
-  font-weight: 700;
-  box-shadow: 0 0 20px rgba(255,87,34,0.2);
-  backdrop-filter: blur(6px);
-}
-.brave-tip-icon { font-size: 28px; flex-shrink: 0; }
 
 .hosts-grid{
   display:grid;
@@ -187,6 +242,24 @@ body {
 .host-card.green-card .host-difficulty { color:#81C784; }
 .host-card.yellow-card .host-difficulty { color:#FFD54F; }
 .host-card.red-card .host-difficulty { color:#EF9A9A; }
+
+/* ── BRAVE TIP ── */
+.brave-tip {
+  display: flex; align-items: center; gap: 12px;
+  background: linear-gradient(135deg, rgba(255,87,34,0.1), rgba(255,152,0,0.08));
+  border-left: 4px solid #FF5722;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin: 0 auto 20px;
+  max-width: 800px;
+  text-align: left;
+  color: #FFCC80;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(255,87,34,0.2);
+  backdrop-filter: blur(6px);
+}
+.brave-tip-icon { font-size: 28px; flex-shrink: 0; }
 
 .step-container {
   background:rgba(24,34,51,0.8); backdrop-filter:blur(12px);
@@ -359,26 +432,40 @@ body {
   </div>
   <div class="badge">📦 MIA GUIDE</div>
   <h1>HOW TO DOWNLOAD<br>FROM MIRRORED.TO</h1>
-  <p class="hero-sub">16 hosts — real experience, no fluff</p>
+  <p class="hero-sub">Quick start or full guidance — you choose</p>
 </div>
 
-<!-- WIZARD AREA -->
 <div class="wizard-wrap">
 
-  <!-- CHOICE SCREEN -->
-  <div class="choice-screen" id="choiceScreen">
-    <div class="choice-title">⬛ SELECT YOUR HOSTING SERVICE ⬛</div>
-    <!-- Brave tip -->
-    <div class="brave-tip">
-      <span class="brave-tip-icon">🦁</span>
-      <span><strong>Brave Browser Recommended!</strong> Brave blocks many ads and pop‑ups automatically. It can remove most dangerous ads on these hosts, but always stay cautious – some malicious pages may still appear.</span>
+  <!-- QUICK START SECTION -->
+  <div class="quick-start" id="quickStart">
+    <h2>⚡ Already know how? Pick a recommended host</h2>
+    <div class="quick-buttons">
+      <button class="quick-btn" onclick="startWizard('mediafire')">📁 MediaFire</button>
+      <button class="quick-btn" onclick="startWizard('sendnow')">⚡ Send.now</button>
     </div>
+    <p class="quick-note">These are the fastest and safest options. Just click to see the quick steps.</p>
+    <!-- Brave tip inside quick start -->
+    <div class="brave-tip" style="margin-top:20px;">
+      <span class="brave-tip-icon">🦁</span>
+      <span><strong>Brave Browser Recommended!</strong> Brave blocks most ads automatically. Always stay cautious — some malicious pages may still appear.</span>
+    </div>
+  </div>
+
+  <!-- FULL GUIDE TOGGLE -->
+  <div class="toggle-full-guide" id="toggleArea">
+    <button class="toggle-btn" onclick="toggleFullGuide()">📘 Show Full Host Guide (beginner friendly)</button>
+  </div>
+
+  <!-- FULL GUIDE (initially hidden) -->
+  <div class="choice-screen hidden" id="choiceScreen">
+    <div class="choice-title">⬛ ALL HOSTING SERVICES ⬛</div>
     <div class="hosts-grid" id="hostsGrid"></div>
   </div>
 
   <!-- WIZARD PANEL (dynamic) -->
   <div id="wizardArea" style="display:none;">
-    <button class="back-to-choice" onclick="goBack()">← Choose another host</button>
+    <button class="back-to-choice" onclick="goBack()">← Back to host list</button>
     <div class="step-container" id="stepContainer"></div>
     <div class="progress-bar" style="margin-top:18px;"><div class="progress-fill" id="progressFill"></div></div>
     <div id="stepExtraBtn">
@@ -445,7 +532,7 @@ body {
   draw();
 })();
 
-/* ─── UPDATED HOSTS DATA (accurate, redefined) ─── */
+/* ─── HOSTS DATA (accurate, redefined) ─── */
 const hosts = [
   { id:'mediafire', name:'MediaFire.com', logo:'mediafire-logo.png', color:'green',
     steps:[
@@ -568,7 +655,7 @@ const hosts = [
   }
 ];
 
-// Render host cards
+// Render full grid (hidden by default)
 const hostsGrid = document.getElementById('hostsGrid');
 hosts.forEach(host => {
   const card = document.createElement('div');
@@ -582,10 +669,21 @@ hosts.forEach(host => {
   hostsGrid.appendChild(card);
 });
 
+/* ─── TOGGLE FULL GUIDE ─── */
+function toggleFullGuide() {
+  const guide = document.getElementById('choiceScreen');
+  guide.classList.toggle('hidden');
+  const btn = document.querySelector('.toggle-btn');
+  if (guide.classList.contains('hidden')) {
+    btn.textContent = '📘 Show Full Host Guide (beginner friendly)';
+  } else {
+    btn.textContent = '📘 Hide Full Host Guide';
+  }
+}
+
 /* ─── WIZARD LOGIC ─── */
 let currentHostId = null;
 let currentStep = 0;
-const choiceScreen = document.getElementById('choiceScreen');
 const wizardArea = document.getElementById('wizardArea');
 const stepContainer = document.getElementById('stepContainer');
 const prevBtn = document.getElementById('prevBtn');
@@ -599,7 +697,10 @@ function getHostById(id) { return hosts.find(h => h.id === id); }
 function startWizard(hostId) {
   currentHostId = hostId;
   currentStep = 0;
-  choiceScreen.classList.add('hidden');
+  // Hide quick start and toggle, show wizard
+  document.getElementById('quickStart').style.display = 'none';
+  document.getElementById('toggleArea').style.display = 'none';
+  document.getElementById('choiceScreen').classList.add('hidden');
   wizardArea.style.display = 'block';
   renderSteps();
   updateUI();
@@ -607,7 +708,10 @@ function startWizard(hostId) {
 
 function goBack() {
   wizardArea.style.display = 'none';
-  choiceScreen.classList.remove('hidden');
+  document.getElementById('quickStart').style.display = '';
+  document.getElementById('toggleArea').style.display = '';
+  // Keep full guide hidden when going back to start
+  document.getElementById('choiceScreen').classList.add('hidden');
   currentHostId = null;
 }
 
