@@ -359,7 +359,7 @@ body {
   </div>
   <div class="badge">📦 MIA GUIDE</div>
   <h1>HOW TO DOWNLOAD<br>FROM MIRRORED.TO</h1>
-  <p class="hero-sub">16 hosts — every step, real experience</p>
+  <p class="hero-sub">16 hosts — real experience, no fluff</p>
 </div>
 
 <!-- WIZARD AREA -->
@@ -445,147 +445,125 @@ body {
   draw();
 })();
 
-/* ─── HOSTS DATA (accurate, color-coded) ─── */
+/* ─── UPDATED HOSTS DATA (accurate, redefined) ─── */
 const hosts = [
   { id:'mediafire', name:'MediaFire.com', logo:'mediafire-logo.png', color:'green',
     steps:[
-      { title:'📁 Step 1: Find the Blue Download Button', body:'The real download button is a <strong>large blue button</strong> in the center, showing the file name and size. <br> Example: <em>[File icon] > file name > Download (xx MB)</em>. <br> Ignore "Download faster now" or any "Premium" buttons.' },
-      { title:'⬇️ Step 2: Click the Download Button', body:'Click the blue button. A new tab will open, and the download should start immediately.' },
-      { title:'📂 Step 3: Locate the File', body:'Find the file in your Downloads folder.' },
-      { title:'🎮 Step 4: Import & Install', body:'Proceed with installation. For a detailed guide, use the yellow button below.' }
-    ]
-  },
-  { id:'gofile', name:'Gofile.io', logo:'gofile-logo.png', color:'green',
-    steps:[
-      { title:'📁 Step 1: Open the Gofile Link', body:'You will see a list of files. Click the file you want to download.' },
-      { title:'⬇️ Step 2: Click the Download Button', body:'On the right side of the file row, there is a <strong>download icon</strong> (next to three horizontal dots). Click it.' },
-      { title:'📂 Step 3: Download Starts', body:'The download will begin (it may not be immediate, but after clicking).' },
-      { title:'📂 Step 4: Locate the File', body:'Find the downloaded file in your Downloads folder.' },
-      { title:'🎮 Step 5: Import & Install', body:'Use the full import guide below.' }
+      { title:'📁 Spot the Blue Download Button', body:'Look for the <strong>large blue button</strong> in the center. It shows the file name and size.' },
+      { title:'⬇️ Click the Button', body:'A new tab may open, and the download will start immediately. No waiting.' },
+      { title:'📂 Locate the File', body:'Find the downloaded file in your Downloads folder.' }
     ]
   },
   { id:'sendnow', name:'Send.now', logo:'sendnow-logo.png', color:'green',
     steps:[
-      { title:'📤 Step 1: Open Send.now Link', body:'You will see a file page with a <strong>big blue "Download" button</strong>.' },
-      { title:'⬇️ Step 2: Click the Blue Button', body:'Click it once – the download starts immediately. No timer, no additional pages.' },
-      { title:'📂 Step 3: Save the File', body:'The file is downloaded. Locate it in your Downloads.' },
-      { title:'🎮 Step 4: Import & Install', body:'Proceed with installation. See the yellow button for full instructions.' }
+      { title:'⚡ Open the Link', body:'You will see a <strong>big blue "Download" button</strong>.' },
+      { title:'⬇️ One Click Download', body:'Click it – the download starts instantly. No timers, no ads.' },
+      { title:'📂 Save the File', body:'The file is saved to your Downloads folder automatically.' }
     ]
   },
   { id:'gdrive', name:'Google Drive', logo:'gdrive-logo.png', color:'green',
     steps:[
-      { title:'📊 Step 1: Open the Google Drive Link', body:'You will see a file preview. Click the <strong>download icon (⬇️)</strong> in the top-right corner.' },
-      { title:'📧 Step 2: Select a Google Account', body:'If prompted, choose a Gmail account (you must be signed in). The download will then start.' },
-      { title:'📂 Step 3: Locate the File', body:'Check your Downloads folder.' },
-      { title:'🎮 Step 4: Import & Install', body:'Install using the comprehensive guide (button below).' }
+      { title:'☁️ Open Drive Link', body:'You will see a file preview. Click the <strong>download icon (⬇️)</strong> in the top-right corner.' },
+      { title:'📧 Confirm with Google Account', body:'If prompted, choose your Gmail account. The download starts after confirmation.' },
+      { title:'📂 Locate the File', body:'Find it in your Downloads.' }
     ]
   },
   { id:'dropbox', name:'Dropbox', logo:'dropbox-logo.png', color:'green',
     steps:[
-      { title:'📦 Step 1: Open the Dropbox Link', body:'You will see a file preview. Click the <strong>"Download"</strong> button (usually top right).' },
-      { title:'⬇️ Step 2: Save the File', body:'The browser downloads the file automatically (no login required if it’s a public link).' },
-      { title:'📂 Step 3: Locate the File', body:'Open your Downloads folder.' },
-      { title:'🎮 Step 4: Import & Install', body:'Refer to the full import guide.' }
+      { title:'📦 Open Dropbox Link', body:'You will see a file preview. Click the <strong>"Download"</strong> button (usually top right).' },
+      { title:'⬇️ Automatic Download', body:'The browser downloads the file automatically. No login required for public links.' },
+      { title:'📂 Locate the File', body:'Check your Downloads folder.' }
+    ]
+  },
+  { id:'gofile', name:'Gofile.io', logo:'gofile-logo.png', color:'yellow',
+    steps:[
+      { title:'📂 Find Your File', body:'You will see a list of files. Locate the one you want.' },
+      { title:'⬇️ Click the Download Icon', body:'On the <strong>right side</strong> of the file row, there is a download icon next to three dots. Click it.' },
+      { title:'⏳ Wait a Moment', body:'The download may take a moment to start. It will then begin.' },
+      { title:'📂 Locate the File', body:'Find the downloaded file in your Downloads.' }
     ]
   },
   { id:'krakenfiles', name:'Krakenfiles.com', logo:'krakenfiles-logo.png', color:'yellow',
     steps:[
-      { title:'🦑 Step 1: Open Krakenfiles Link', body:'Scroll down past any banner ads. Look for the real download button (usually green).' },
-      { title:'⏳ Step 2: Free Transfer Limit', body:'A free user can download up to 5 GB per day. If you see a verification, wait a moment.' },
-      { title:'⬇️ Step 3: Click the Download Button', body:'Click the download button below the verification. It may open an ad page – simply press back, then click the download button again. The download will start.' },
-      { title:'📂 Step 4: Locate the File', body:'Find the file in your Downloads.' },
-      { title:'🎮 Step 5: Import & Install', body:'Use the installation guide (button below).' }
-    ]
-  },
-  { id:'rapidgator', name:'Rapidgator.net', logo:'rapidgator-logo.png', color:'yellow',
-    steps:[
-      { title:'🐆 Step 1: Open Rapidgator Link', body:'You will see "Free Download" and "Premium". Click the <strong>grey "Free Download"</strong> button.' },
-      { title:'⏳ Step 2: Wait 45 Seconds', body:'A 45-second countdown starts. Wait for it.' },
-      { title:'🔢 Step 3: Enter Verification', body:'After the timer, enter the captcha text (letters/numbers). Click the big <strong>orange "Click here to download"</strong> button.' },
-      { title:'📂 Step 4: Download Starts', body:'The file will download immediately after clicking.' },
-      { title:'🎮 Step 5: Import & Install', body:'Proceed with import. Full guide below.' }
-    ]
-  },
-  { id:'1fichier', name:'1fichier.com', logo:'1fichier-logo.png', color:'yellow',
-    steps:[
-      { title:'1️⃣ Step 1: Open 1fichier Link', body:'You will see file details and a green download arrow.' },
-      { title:'⏳ Step 2: Wait 60 Seconds', body:'A 60-second timer starts. Wait for it to finish.' },
-      { title:'⬇️ Step 3: Click the Download Button', body:'After the timer, click the download button. The file will start downloading.' },
-      { title:'📂 Step 4: Locate the File', body:'Check your Downloads folder.' },
-      { title:'🎮 Step 5: Import & Install', body:'Use the full import guide (button below).' }
+      { title:'🧩 Open Krakenfiles Link', body:'Scroll down past any banner ads. The real download button is usually green.' },
+      { title:'⬇️ Click the Real Download', body:'Click the button below the verification (if any). You might get an ad – simply press back and click again.' },
+      { title:'📂 Locate the File', body:'The download will start. Find it in your Downloads.' }
     ]
   },
   { id:'userdrive', name:'Userdrive.com', logo:'userdrive-logo.png', color:'yellow',
     steps:[
-      { title:'👤 Step 1: Open Userdrive Link', body:'Scroll down on the page.' },
-      { title:'🔒 Step 2: Solve Captcha', body:'Complete the captcha, then press the button <strong>"Create download link"</strong> (located just below the captcha).' },
-      { title:'↩️ Step 3: Press Back & Download', body:'After pressing that button, press your browser’s back button. Now you will see a <strong>"Click to download"</strong> button. Click it.' },
-      { title:'📂 Step 4: Download Starts', body:'The file will begin downloading.' },
-      { title:'🎮 Step 5: Import & Install', body:'Install following the comprehensive guide.' }
+      { title:'🔐 Scroll Down & Solve Captcha', body:'Complete the captcha, then press <strong>"Create download link"</strong> below it.' },
+      { title:'↩️ Press Back & Download', body:'After that, press your browser’s back button. Now you will see <strong>"Click to download"</strong>. Click it.' },
+      { title:'📂 Download Starts', body:'The file will begin downloading.' }
     ]
   },
   { id:'devuploads', name:'Devuploads.com', logo:'devuploads-logo.png', color:'yellow',
     steps:[
-      { title:'📤 Step 1: Open Devuploads Link', body:'Scroll down (the page can be cluttered). Look for a <strong>blue "Generate Download Link"</strong> button near the bottom.' },
-      { title:'⏳ Step 2: Wait 13 Seconds', body:'After clicking, a 13-second timer starts. Wait for it.' },
-      { title:'🔗 Step 3: Go to Generated Link', body:'Click the button that appears: <strong>"Go to generated download link"</strong>. A new tab opens.' },
-      { title:'⬇️ Step 4: Click "Download Now"', body:'In the new tab, scroll down a little. You will see two buttons: <strong>"Download Now"</strong> (bigger) and "Download file (fast)". Click <strong>"Download Now"</strong>.' },
-      { title:'📂 Step 5: Locate the File', body:'The download starts. Find the file in your Downloads.' },
-      { title:'🎮 Step 6: Import & Install', body:'Use the full import guide (button below).' }
+      { title:'🛠️ Scroll Down & Generate Link', body:'Find the <strong>blue "Generate Download Link"</strong> button near the bottom.' },
+      { title:'⏳ Wait 13 Seconds', body:'After clicking, a timer runs. Wait for it.' },
+      { title:'🔗 Go to Generated Link', body:'Click <strong>"Go to generated download link"</strong>. A new tab opens.' },
+      { title:'⬇️ Click "Download Now"', body:'In the new tab, click the larger <strong>"Download Now"</strong> button (ignore the smaller "fast" button).' },
+      { title:'📂 Locate the File', body:'The download starts. Find it in your Downloads.' }
     ]
   },
-  { id:'upload.ee', name:'Upload.ee', logo:'upload-ee-logo.png', color:'red',
+  { id:'1fichier', name:'1fichier.com', logo:'1fichier-logo.png', color:'yellow',
     steps:[
-      { title:'📤 Step 1: Open Upload.ee Link', body:'Warning: This host often shows dangerous ads and may rename files to <strong>.apk</strong> (possible virus). Proceed with extreme caution.' },
-      { title:'⬇️ Step 2: Click the Download Button', body:'If you still want to download, click the large download button. The download usually starts immediately (no captcha).' },
-      { title:'📂 Step 3: Check the File', body:'Verify the downloaded file extension is correct. Do NOT open .apk files unless you are 100% sure they are safe.' },
-      { title:'🎮 Step 4: Import & Install', body:'If the file is legitimate, install it. Otherwise, delete it. Full guide below.' }
+      { title:'1️⃣ Open 1fichier Link', body:'You will see file details and a green download arrow.' },
+      { title:'⏳ Wait 60 Seconds', body:'A 60‑second timer starts. Wait for it to finish.' },
+      { title:'⬇️ Click the Download Button', body:'After the timer, click the button. The file will start downloading.' },
+      { title:'📂 Locate the File', body:'Find it in your Downloads.' }
     ]
   },
-  { id:'megaup', name:'Megaup.net', logo:'megaup-logo.png', color:'red',
+  { id:'rapidgator', name:'Rapidgator.net', logo:'rapidgator-logo.png', color:'yellow',
     steps:[
-      { title:'⬆️ Step 1: Open Megaup Link', body:'Warning: This host contains NSFW ads and pop-ups. Avoid if possible.' },
-      { title:'⏳ Step 2: Wait 3 Seconds', body:'The page may load and then a short delay occurs (probably fetching the download link).' },
-      { title:'⬇️ Step 3: Click the Download Button', body:'Click the download button. It will open an ad page (often with explicit adult content). Close it immediately.' },
-      { title:'⬇️ Step 4: Try Again', body:'Press back or click the download button a second time. The file download may start, but even the download page may contain NSFW images.' },
-      { title:'📂 Step 5: Locate the File', body:'If you managed to download, find the file. Be aware that NSFW content was displayed.' },
-      { title:'🎮 Step 6: Import & Install', body:'Install cautiously. Full guide below.' }
+      { title:'🐌 Choose Free Download', body:'Click the <strong>grey "Free Download"</strong> button (not the premium one).' },
+      { title:'⏳ Wait 45 Seconds', body:'A countdown starts. Wait for it.' },
+      { title:'🔢 Enter Verification', body:'Enter the captcha text and click the big <strong>orange "Click here to download"</strong> button.' },
+      { title:'📂 Download Starts', body:'The file will download immediately.' }
     ]
   },
   { id:'katfile', name:'Katfile.online', logo:'katfile-logo.png', color:'red',
     steps:[
-      { title:'🐱 Step 1: Open Katfile Link', body:'You will see a page with a download button. Click it.' },
-      { title:'🐢 Step 2: Select Free (Slow Speed)', body:'You will be asked to pick slow speed (free) or high-speed (premium). Click <strong>Slow Speed Download</strong>.' },
-      { title:'⏳ Step 3: Wait 30 Seconds', body:'A 30-second countdown starts. Wait for it.' },
-      { title:'⚠️ Step 4: New Tab with NSFW Content', body:'After the timer, clicking the download button will open a new tab that may contain <strong>JavMit | Japan adult video</strong> and other NSFW ads. <strong>This is a high risk of adult content.</strong>' },
-      { title:'⬇️ Step 5: Possible Download', body:'If you close the NSFW tab and try again, the file may eventually download after many attempts, but we strongly recommend skipping this host.' },
-      { title:'📂 Step 6: Locate & Install', body:'If you get the file, install it. Guide below.' }
-    ]
-  },
-  { id:'upfiles', name:'Upfiles.com', logo:'upfiles-logo.png', color:'red',
-    steps:[
-      { title:'🛑 Step 1: Open Upfiles Link (NOT recommended)', body:'This host is <strong>extremely dangerous</strong>. It opens countless pop-up ads, detects ad blockers, and may install malware or open random apps on your phone. <strong>We strongly advise you to SKIP this host.</strong>' },
-      { title:'⚠️ Step 2: If you must proceed', body:'Be prepared for multiple pop-ups. The real download requires clicking the "Free Download" button, waiting 5 seconds, then often pressing back and trying again many times.' },
-      { title:'❌ Step 3: Very Hard to Get File', body:'Even after many attempts, you may not get the file. The risk of malware/adware is high.' },
-      { title:'📂 Step 4: Locate (if any)', body:'If a file downloads, scan it with antivirus before opening.' },
-      { title:'🚫 Step 5: Import & Install', body:'Not recommended. Use the import guide only if you are certain the file is safe.' }
+      { title:'🐢 Choose Free (Slow Speed)', body:'Click <strong>Slow Speed Download</strong>.' },
+      { title:'⏳ Wait 30 Seconds', body:'A countdown starts. Wait for it.' },
+      { title:'⚠️ Beware of NSFW Tabs', body:'After the timer, clicking may open a new tab with adult content (JavMit). Close it immediately.' },
+      { title:'⬇️ Try Again', body:'Close the NSFW tab and try again. The file may eventually download after several attempts. <strong>We strongly recommend skipping this host.</strong>' },
+      { title:'📂 Locate & Install', body:'If you managed to get the file, install it with caution.' }
     ]
   },
   { id:'4shared', name:'4shared.com', logo:'4shared-logo.png', color:'red',
     steps:[
-      { title:'4️⃣ Step 1: Open 4shared Link', body:'The site requires an account to download. You will be prompted to sign in or create a 4shared account.' },
-      { title:'🔑 Step 2: Create or Log In', body:'If you don’t have an account, you must register (free). After logging in, the download becomes available.' },
-      { title:'⬇️ Step 3: Download', body:'Once logged in, click the download button.' },
-      { title:'📂 Step 4: Locate the File', body:'Find the file in your Downloads.' },
-      { title:'🎮 Step 5: Import & Install', body:'Proceed with installation. Full guide below.' }
+      { title:'🔑 Account Required', body:'You must sign in or create a 4shared account to download.' },
+      { title:'⬇️ Download After Login', body:'Once logged in, click the download button.' },
+      { title:'📂 Locate the File', body:'Find the file in your Downloads.' }
+    ]
+  },
+  { id:'upfiles', name:'Upfiles.com', logo:'upfiles-logo.png', color:'red',
+    steps:[
+      { title:'🚫 Extremely Dangerous', body:'This host opens countless pop‑up ads, may detect ad blockers, and can install malware. <strong>We strongly advise you to SKIP this host.</strong>' },
+      { title:'⚠️ If You Must Proceed', body:'Be prepared for multiple pop‑ups. The real download requires clicking "Free Download", waiting 5 seconds, and often pressing back repeatedly.' },
+      { title:'📂 Locate (if any)', body:'If a file downloads, scan it with antivirus before opening.' }
+    ]
+  },
+  { id:'megaup', name:'Megaup.net', logo:'megaup-logo.png', color:'red',
+    steps:[
+      { title:'⬆️ Open Megaup Link', body:'Warning: This host contains NSFW ads and pop‑ups. Avoid if possible.' },
+      { title:'⏳ Wait a Moment', body:'A short delay occurs (fetching download link).' },
+      { title:'⬇️ Click Download (with caution)', body:'Click the download button. It will open an ad page (often explicit). Close it immediately, then press back and click again.' },
+      { title:'📂 Locate the File', body:'If you managed to download, find the file. Be aware that NSFW content was displayed.' }
+    ]
+  },
+  { id:'upload.ee', name:'Upload.ee', logo:'upload-ee-logo.png', color:'red',
+    steps:[
+      { title:'📤 Open Upload.ee Link', body:'Warning: This host often shows dangerous ads and may rename files to <strong>.apk</strong> (possible virus). Proceed with extreme caution.' },
+      { title:'⬇️ Click the Large Download Button', body:'If you still want to download, click the main button. It usually starts immediately (no captcha).' },
+      { title:'📂 Check the File', body:'Verify the downloaded file extension is correct. Do NOT open .apk files unless you are 100% sure they are safe.' }
     ]
   },
   { id:'filesdl', name:'FilesDL', logo:'filesdl-logo.png', color:'red',
     steps:[
-      { title:'🚫 Step 1: Open FilesDL Link', body:'Unfortunately, <strong>every attempt leads to an ad page</strong>. It does not seem possible to actually download the file.' },
-      { title:'❌ Step 2: No Working Download', body:'Close the tab and try a different host from the Mirrored.to list. This host is effectively broken.' },
-      { title:'📂 Step 3: No File', body:'There is no file to locate.' },
-      { title:'🎮 Step 4: Import & Install', body:'Not applicable. Use another mirror.' }
+      { title:'🚫 Broken Host', body:'Unfortunately, <strong>every attempt leads to an ad page</strong>. It is not possible to actually download the file.' },
+      { title:'❌ No Working Download', body:'Close the tab and try a different host from the Mirrored.to list.' }
     ]
   }
 ];
