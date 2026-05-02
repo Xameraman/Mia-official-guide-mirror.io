@@ -305,7 +305,12 @@ body {
   box-shadow:0 8px 32px rgba(0,0,0,0.4), 0 0 30px rgba(93,158,49,0.15);
   border:1px solid rgba(93,158,49,0.2); transition:all 0.4s;
 }
-.step-panel { display:none; }
+.step-panel {
+  display:none;
+  padding-left: 20px;
+  border-left: 4px solid transparent;
+  transition: border-color 0.3s;
+}
 .step-panel.active { display:block; animation:fadeSlide 0.3s ease; }
 @keyframes fadeSlide { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
 
@@ -314,9 +319,10 @@ body {
   display:flex; align-items:center; gap:10px;
 }
 .step-num {
-  background:var(--grass); font-family:'Press Start 2P',monospace;
-  font-size:8px; padding:4px 10px; border-radius:4px; color:#fff;
-  box-shadow:0 0 14px rgba(93,158,49,0.6);
+  font-family:'Press Start 2P',monospace;
+  font-size:8px; padding:4px 10px; border-radius:4px;
+  color:#fff; letter-spacing:1px;
+  /* background is set inline via JS */
 }
 .step-body { font-size:15px; line-height:1.8; color:#C8D8E0; }
 .step-body strong { color:var(--accent); }
@@ -475,7 +481,7 @@ body {
 
 <div class="wizard-wrap">
 
-  <!-- QUICK START SECTION (Triangular layout, Press for More inside) -->
+  <!-- QUICK START SECTION (unchanged) -->
   <div class="quick-start" id="quickStart">
     <h2>⚡ Recommended Easy Hosts</h2>
     <div class="quick-buttons-col">
@@ -488,13 +494,12 @@ body {
       </div>
     </div>
     <p class="quick-note">Google Drive and Dropbox are also great easy options.</p>
-    <!-- Toggle inside quick-start -->
     <div class="toggle-full-guide" id="toggleArea">
       <button class="toggle-btn" onclick="toggleFullGuide()">🔽 Press for More Options</button>
     </div>
   </div>
 
-  <!-- BRAVE TIP (separate) -->
+  <!-- BRAVE TIP -->
   <div class="brave-tip">
     <span class="brave-tip-icon">🦁</span>
     <span><strong>Brave Browser Recommended!</strong> Brave blocks most ads automatically. Always stay cautious – some malicious pages may still appear.</span>
@@ -575,7 +580,7 @@ body {
   draw();
 })();
 
-/* ─── HOSTS DATA (Gofile first in full list) ─── */
+/* ─── HOSTS DATA (unchanged) ─── */
 const hosts = [
   { id:'gofile', name:'Gofile.io', logo:'gofile-logo.png', color:'green',
     steps:[
@@ -718,6 +723,11 @@ function toggleFullGuide() {
   guide.classList.toggle('hidden');
 }
 
+/* ─── VIBRANT STEP COLORS ─── */
+const stepColors = [
+  '#00c6ff', '#a78bfa', '#f59e0b', '#34d399', '#f87171', '#60a5fa', '#f472b6', '#00ff88'
+];
+
 /* ─── WIZARD LOGIC ─── */
 let currentHostId = null;
 let currentStep = 0;
@@ -755,9 +765,11 @@ function renderSteps() {
   steps.forEach((step, idx) => {
     const panel = document.createElement('div');
     panel.className = 'step-panel';
+    const color = stepColors[idx % stepColors.length];
+    panel.style.borderLeftColor = color;
     panel.innerHTML = `
       <div class="step-title">
-        <span class="step-num">STEP ${idx+1}</span>
+        <span class="step-num" style="background:${color}; box-shadow: 0 0 14px ${color};">STEP ${idx+1}</span>
         ${step.title}
       </div>
       <div class="step-body">${step.body}</div>
