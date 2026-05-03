@@ -137,7 +137,6 @@ body {
   letter-spacing: 1px;
   margin-bottom: 14px;
 }
-/* Triangular layout */
 .quick-buttons-col {
   display: flex;
   flex-direction: column;
@@ -206,7 +205,7 @@ body {
   box-shadow: 0 0 32px rgba(255,215,0,0.85);
 }
 
-/* ── BRAVE TIP (separate) ── */
+/* ── BRAVE TIP ── */
 .brave-tip {
   display: flex; align-items: center; gap: 12px;
   background: linear-gradient(135deg, rgba(255,87,34,0.1), rgba(255,152,0,0.08));
@@ -311,7 +310,6 @@ body {
   font-size:7px; padding:3px 10px; border-radius:4px;
   color:#fff; letter-spacing:1px;
   box-shadow:0 0 12px rgba(93,158,49,0.6);
-  /* background is set inline via JS */
 }
 .step-body { font-size:14px; line-height:1.7; color:#C8D8E0; }
 .step-body strong { color:var(--accent); }
@@ -401,6 +399,18 @@ body {
 }
 .footer-sub { font-size:10px; color:#7A8A9A; letter-spacing:1px; }
 .footer-sub span { color:#FF6B6B; }
+
+/* ── MOBILE FIX for AI chat bubble ── */
+@media (max-width: 600px) {
+  .chatling-widget,
+  .chtl-chat,
+  #chatling-bubble {
+    max-width: 92vw !important;
+    max-height: 70vh !important;
+    bottom: 10px !important;
+    right: 10px !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -599,7 +609,7 @@ const hosts = [
   { id:'userdrive', name:'Userdrive.com', logo:'userdrive-logo.png', color:'yellow',
     steps:[
       { title:'🔐 Scroll Down & Solve Captcha', body:'Complete the captcha, then press <strong>"Create download link"</strong> below it.' },
-      { title:'↩️ Press Back & Download', body:'After that, press your browser’s back button. Now you will see <strong>"Click to download"</strong>. Click it.' },
+      { title:'↩️ Press Back & Download', body:'After that, press your browser\'s back button. Now you will see <strong>"Click to download"</strong>. Click it.' },
       { title:'📂 Download Starts', body:'The file will begin downloading.' }
     ]
   },
@@ -775,5 +785,9 @@ function changeStep(dir) {
   }
 }
 </script>
+
+<!-- MIA AI Assistant (Chatling - same agent across all MIA guide sites) -->
+<script> window.chtlConfig = { chatbotId: "7411237892" } </script>
+<script async data-id="7411237892" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
 </body>
 </html>
